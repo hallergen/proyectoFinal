@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class EstadoService {
 
 
-  // urlApi = "https://hallergen.herokuapp.com/api/estado";  
-  urlApi = "http://localhost:8080/api/estado";  
+  urlApi = "https://hallergen.herokuapp.com/api/estado";  
+  //urlApi = "http://localhost:8080/api/estado";  
 
   constructor(private http:HttpClient) { }
 
