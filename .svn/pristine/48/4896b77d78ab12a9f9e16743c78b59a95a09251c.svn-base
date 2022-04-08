@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+
+
+const routes: Routes = [
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  // Estado
+  { path: 'estados', loadChildren: () => import('./estado/lista/lista.module').then(m => m.ListaModule) },
+  { path: 'estado-crea', loadChildren: () => import('./estado/crea/crea.module').then(m => m.CreaModule) },
+  { path: 'estado-modifica/:id', loadChildren: () => import('./estado/modifica/modifica.module').then(m => m.ModificaModule) },
+  // Cancha
+  { path: 'canchas', loadChildren: () => import('./cancha/lista/lista.module').then(m => m.ListaModule) },
+  { path: 'cancha-crea', loadChildren: () => import('./cancha/crea/crea.module').then(m => m.CreaModule) },
+  { path: 'cancha-modifica/:id', loadChildren: () => import('./cancha/modifica/modifica.module').then(m => m.ModificaModule) },
+  // RESERVA
+  { path: 'agendar', loadChildren: () => import('./reserva/reservar/reservar.module').then(m => m.ReservarModule) },
+  
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
